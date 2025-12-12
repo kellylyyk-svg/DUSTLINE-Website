@@ -17,7 +17,7 @@ header .loginbox .login {background: url(../images/login_bg.png); background-rep
 header .loginbox a {width: 100px; text-align: center; color: #fff; font-size: 18px;}
 header nav {}
 header nav .gnb {display: flex; justify-content: space-between; margin-top: 50px;}
-header nav .gnb li {font-size: 20px; font-weight: 300; flex-grow: 1; transition: 0.3s;}
+header nav .gnb li {font-size: 20px; font-weight: 300; flex-grow: 1; transition: 0.3s; border-bottom: 4px solid #d3582700; box-sizing: border-box;}
 header nav .gnb li a {color: #fff; padding: 10px 35px;  display: flex; justify-content: center;}
 
 header nav .gnb li:hover {border-bottom: 4px solid #D35827;}
