@@ -3,21 +3,24 @@
 @import url(reset.css);
 
 body {font-family: 'Isamanru';}
-.centerbox {width: 1040px; margin: 0 auto; border: 1px solid #000;}
+.centerbox {max-width: 1040px; margin: 0 auto;}
 
-header {background: rgba(25, 25, 21, 0.6); box-sizing: border-box; padding: 30px 0 5px 0;}
+header {background: rgba(25, 25, 21, 0.6); position: absolute; width: 100%;}
+header .centerbox {}
 header .topset {display: flex; justify-content: space-between;}
-header .topset .langbox {display: flex; align-items: start; font-size: 18px; gap: 7px;}
+header .topset .langbox {display: flex; align-items: start; font-size: 18px; gap: 7px; padding: 25px 0; color: #fff;}
 header .topset h1 {}
 header .topset h1 a {}
 header .topset h1 a img {}
-header .loginbox {display: flex; height: 27px;}
+header .loginbox {display: flex; justify-content: space-between; padding: 25px 0;}
 header .loginbox .login {background: url(../images/login_bg.png); background-repeat: no-repeat; display: flex; justify-content: center;}
 header .loginbox a {width: 100px; text-align: center; color: #fff; font-size: 18px;}
 header nav {}
 header nav .gnb {display: flex; justify-content: space-between; margin-top: 50px;}
-header nav .gnb li {font-size: 20px;}
-header nav .gnb li a {color: #fff; padding: 10px 35px; display: block;}
+header nav .gnb li {font-size: 20px; font-weight: 300; flex-grow: 1; transition: 0.3s;}
+header nav .gnb li a {color: #fff; padding: 10px 35px;  display: flex; justify-content: center;}
+
+header nav .gnb li:hover {border-bottom: 4px solid #D35827;}
 
 
 
