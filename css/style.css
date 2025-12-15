@@ -8,7 +8,11 @@ body {font-family: 'Isamanru';}
 header {background: rgba(25, 25, 21, 0.6); position: absolute; width: 100%;}
 header .centerbox {}
 header .topset {display: flex; justify-content: space-between;}
-header .topset .langbox {display: flex; align-items: start; font-size: 18px; gap: 7px; padding: 25px 0; color: #fff;}
+header .topset .langbox { font-size: 18px; gap: 7px; padding: 25px 0; color: #fff;}
+header .topset .langbox .langbox_title {display: flex; align-items: center; gap: 5px; position: relative;}
+header .topset .langbox .lnb {background: #191915; position: absolute; box-shadow: 4px 6px 60px rgba(0, 0, 0, 0.1); left: 21%; bottom: 10%; margin-left: 10px; overflow: hidden; max-height: 0; transition: 0.4s; opacity: 0;}
+header .topset .langbox .lnb li {}
+
 header .topset h1 {}
 header .topset h1 a {}
 header .topset h1 a img {}
@@ -16,13 +20,25 @@ header .loginbox {display: flex; justify-content: space-between; padding: 25px 0
 header .loginbox .login {background: url(../images/login_bg.png); background-repeat: no-repeat; display: flex; justify-content: center;}
 header .loginbox a {width: 100px; text-align: center; color: #fff; font-size: 18px;}
 header nav {}
-header nav .gnb {display: flex; justify-content: space-between; margin-top: 50px;}
-header nav .gnb li {font-size: 20px; font-weight: 300; flex-grow: 1; transition: 0.3s; border-bottom: 4px solid #d3582700; box-sizing: border-box;}
-header nav .gnb li a {color: #fff; padding: 10px 35px;  display: flex; justify-content: center;}
+header nav .gnb {display: flex; justify-content: space-between; margin-top: 50px; }
+header nav .gnb > li {font-size: 20px; font-weight: 300; flex-grow: 1; transition: 0.3s; position: relative;}
+header nav .gnb > li > a {color: #fff; padding: 10px 35px;  display: flex; justify-content: center; }
 
-header nav .gnb li:hover {border-bottom: 4px solid #D35827;}
+/* header nav .gnb > li:hover {border-bottom: 4px solid #D35827;} */
+
+header nav .gnb .lnb {background: #191915; position: absolute; display: flex; box-shadow: 4px 6px 60px rgba(0, 0, 0, 0.1); left: 0; width: 150%; opacity: 0; transition: 0.3s; visibility: hidden; top: 90%;}
+header nav .gnb .lnb::after {content: ''; position: absolute; width: 0; height: 4px; background: #d35827; left: 0; transition: 0.3s;}
+header nav .gnb .lnb ul {}
+header nav .gnb .lnb ul li {font-size: 16px; transition: 0.2s; }
+/* header nav .gnb .lnb ul li::after {content: ''; right: 0; height: 2px; background: #d35827; position: absolute; transition: 0.3s;} */
+header nav .gnb .lnb figure {display: flex; align-items: center; justify-content: center; flex-grow: 1;}
+.lnb li a {color: #fff; display: flex; padding: 20px 10px;}
 
 
+header nav .gnb li:hover .lnb::after {width: 100%;}
+header nav .gnb li:hover .lnb {opacity: 1; visibility: visible; left: 0;}
+header nav .gnb .lnb ul li:hover {background: #d35827;}
+/* header nav .gnb .lnb ul li:hover::after {width: 45%;} */
 
 
 .hero {height: 995px;}
