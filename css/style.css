@@ -78,11 +78,20 @@ header nav .gnb .lnb ul li:hover {background: #d35827;}
 
 
 .sectionbox .section2 {}
-.sectionbox .section2 ul {}
-.sectionbox .section2 ul li {}
-.sectionbox .section2 ul li .frame {}
-.sectionbox .section2 ul li .bg {}
-.sectionbox .section2 ul li .icon {}
+.sectionbox .section2 .centerbox {padding: 240px 0;}
+.sectionbox .section2 ul {display: grid; grid-template-columns: repeat(3,1fr); width: 100%; gap: 60px 30px;}
+.sectionbox .section2 ul li {position: relative; overflow: hidden; width: 100%; transition: 0.5s;}
+.sectionbox .section2 ul li .frame {position: relative; display: block; z-index: 3;}
+.sectionbox .section2 ul li .bg {position: absolute; width: 90%; height: 85%; top: 50%; left: 50%; transform: translate(-47%, -51%); object-fit: cover; z-index: 1;}
+.sectionbox .section2 ul li .textbox {position: absolute; top: 50%; left: 50%; transform: translate(-48%, -50%); width: 90%; height: 90%; object-fit: cover; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; z-index: 4; padding: 0 12px; box-sizing: border-box;}
+.sectionbox .section2 ul li .textbox strong {font-size: 20px; font-weight: 300; text-shadow: 0 0 6px rgba(234, 142, 105, 0.5);}
+.sectionbox .section2 ul li .textbox p {font-size: 15px; font-weight: 300; font-family: 'Presentation';}
+.sectionbox .section2 ul li .icon {position: absolute; top: 80%; right: 32%; z-index: 5;}
+.sectionbox .section2 ul li:nth-child(2), .sectionbox .section2 ul li:nth-child(5) {transform: translateY(40px);}
+
+.sectionbox .section2 .hover {position: absolute; z-index: 0; top: 50%; left: 50%; transform: translate(-45%, -45%); width: 100%; height: 100%; visibility: hidden; opacity: 0; transition: 0.5s;}
+.sectionbox .section2 ul li:hover .hover {opacity: 1; visibility: visible;}
+.sectionbox .section2 ul li:hover {scale: 1.1;}
 
 
 
