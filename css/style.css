@@ -80,9 +80,9 @@ header nav .gnb .lnb ul li:hover {background: #d35827;}
 .sectionbox .section2 {}
 .sectionbox .section2 .centerbox {padding: 240px 0;}
 .sectionbox .section2 ul {display: grid; grid-template-columns: repeat(3,1fr); width: 100%; gap: 60px 30px;}
-.sectionbox .section2 ul li {position: relative; overflow: hidden; width: 100%; transition: 0.5s;}
+.sectionbox .section2 ul li {position: relative; overflow: hidden; width: 100%; transition: 0.5s; cursor: pointer;}
 .sectionbox .section2 ul li .frame {position: relative; display: block; z-index: 3;}
-.sectionbox .section2 ul li .bg {position: absolute; width: 90%; height: 85%; top: 50%; left: 50%; transform: translate(-47%, -51%); object-fit: cover; z-index: 1;}
+.sectionbox .section2 ul li .bg {position: absolute; width: 90%; height: 85%; top: 50%; left: 50%; transform: translate(-47%, -51%); z-index: 1;}
 .sectionbox .section2 ul li .textbox {position: absolute; top: 50%; left: 50%; transform: translate(-48%, -50%); width: 90%; height: 90%; object-fit: cover; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; z-index: 4; padding: 0 12px; box-sizing: border-box;}
 .sectionbox .section2 ul li .textbox strong {font-size: 20px; font-weight: 300; text-shadow: 0 0 6px rgba(234, 142, 105, 0.5);}
 .sectionbox .section2 ul li .textbox p {font-size: 15px; font-weight: 300; font-family: 'Presentation';}
@@ -93,8 +93,30 @@ header nav .gnb .lnb ul li:hover {background: #d35827;}
 .sectionbox .section2 ul li:hover .hover {opacity: 1; visibility: visible;}
 .sectionbox .section2 ul li:hover {scale: 1.1;}
 
+.sectionbox .section3 {padding-bottom: 240px;}
+.sectionbox .section3 .centerbox {position: relative; width: 978px;}
+.sectionbox .section3 .cta {}
+.sectionbox .section3 .cta img {text-align: center; width: 100%; height: 100%;}
+.sectionbox .section3 .left {position: absolute; top: 50%; left: 6%; font-size: 14px; color: #ffce52;}
+.sectionbox .section3 .cta-text {position: absolute; top: 50%; left: 50%; display: flex; flex-direction: column; align-items: center; transform: translate(-50%, -50%); font-size: 35px; gap: 20px;}
+.sectionbox .section3 .cta-text .subtext {color: #fff;}
+.sectionbox .section3 .cta-text .maintext {color: #7d2724; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0 4px 4px rgba(0, 0, 0, 0.25);}
+.sectionbox .section3 .right {position: absolute; top: 45%; right: 7%; display: flex; align-items: center; gap: 15px;}
 
-
+.sectionbox .section4 {position: relative; }
+.sectionbox .section4 .bg {width: 1228px; height: 784px; margin: 0 auto; }
+.sectionbox .section4 .bg img {width: 100%; height: 100%;}
+.sectionbox .section4 .centerbox {}
+.sectionbox .section4 .centerbox .section4_content {position: absolute; top: 0; left: 50%; transform: translate(-50%, 0); padding: 50px 94px; box-sizing: border-box;}
+.sectionbox .section4 .grid {display: grid; grid-template-columns: repeat(4, 194px); grid-template-rows: repeat(2, 262px); gap: 30px;}
+.sectionbox .section4 .grid li {border: 1px solid #fff; position: relative;}
+.sectionbox .section4 .grid li a {color: #fff; display: flex; justify-content: center; align-items: center; height: 100%;}
+.sectionbox .section4 .grid li:nth-child(1) {grid-row: span 2;}
+.sectionbox .section4 .grid li:nth-child(3) {grid-column: span 2;}
+.sectionbox .section4 .grid li:nth-child(5) {grid-column: span 2;}
+.sectionbox .section4 .grid li a .nb {position: absolute; left: 0; top: 0;}
+.sectionbox .section4 .grid li a .ct {width: 160px; height: 160px; position: absolute; background: rgba(1, 1, 1, 0.7); top: 10%; display: flex; flex-direction: column; justify-content: space-between;}
+.sectionbox .section4 .grid li a .ct .en {text-align: right;}
 
 
 footer {height: 336px; background: rgba(25, 25, 21, 0.6)}
