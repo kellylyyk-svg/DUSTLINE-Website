@@ -22,7 +22,7 @@ header .topset .langbox .lnb li:hover {background: #d35827;}
 header .topset h1 {}
 header .topset h1 a {}
 header .topset h1 a img {}
-header .loginbox {display: flex; justify-content: space-between; padding: 25px 0; }
+header .loginbox {display: flex; justify-content: space-between; align-items: start; padding: 25px 0; box-sizing: border-box;}
 header .loginbox .login {background: url(../images/login_bg.png); background-repeat: no-repeat; display: flex; justify-content: center;}
 header .loginbox a {width: 100px; text-align: center; color: #fff; font-size: 18px;}
 header nav {}
@@ -32,15 +32,16 @@ header nav .gnb > li > a {color: #fff; padding: 15px 35px;  display: flex; justi
 
 /* header nav .gnb > li:hover {border-bottom: 4px solid #D35827;} */
 
-header nav .gnb .lnb {background: #191915; position: absolute; display: flex; box-shadow: 4px 6px 60px rgba(0, 0, 0, 0.1); left: 0; width: 150%; opacity: 0; transition: 0.3s; visibility: hidden; top: 90%;}
+header nav .gnb .lnb {background: #191915; position: absolute; display: flex; box-shadow: 4px 6px 60px rgba(0, 0, 0, 0.1); left: 0; width: 100%; opacity: 0; transition: 0.3s; visibility: hidden; top: 90%;}
 header nav .gnb .lnb::after {content: ''; position: absolute; width: 0; height: 4px; background: #d35827; left: 0; transition: 0.3s;}
 header nav .gnb .lnb ul {}
 header nav .gnb .lnb ul li {font-size: 16px;}
 /* header nav .gnb .lnb ul li::after {content: ''; right: 0; height: 2px; background: #d35827; position: absolute; transition: 0.3s;} */
 header nav .gnb .lnb figure {display: flex; align-items: center; justify-content: center; flex-grow: 1;}
-.lnb li a {color: #fff; display: flex; padding: 20px 10px;}
+.lnb li a {color: #fff; display: flex; padding: 20px 20px; white-space: nowrap;}
 
-header nav .gnb > li:hover > a {scale: 1.1; }
+header nav .gnb > li:hover, .gnb > li.on {background-image: url(../images/gnb_hover.png); background-repeat: no-repeat; background-position: center;}
+header nav .gnb > li > a:active {scale: 0.95;}
 header nav .gnb li:hover .lnb::after {width: 100%;}
 header nav .gnb li:hover .lnb {opacity: 1; visibility: visible; left: 0;}
 header nav .gnb .lnb ul li:hover {background: #d35827;}
@@ -50,24 +51,24 @@ header nav .gnb .lnb ul li:hover {background: #d35827;}
 .hero {height: 995px; position: relative; z-index: 0;}
 .hero img {}
 
-.hero .arrow_box {position: absolute; width: 100%; top: 50%; z-index: 3;}
-.hero .arrow_box div {position: absolute; width: 50px;  height: 50px; transform: translate(0, 50%); cursor: pointer; margin: 0 20px;}
-.hero .arrow_box .btn_next {right: 0; background: blue;}
-.hero .arrow_box .btn_prev {left: 0; background: red;}
 
-.hero ul {width: 200%; display: flex; height: 100%; transition: 0.5s;}
-.hero ul li {width: 100%; height: 100%;}
-.hero ul li img {width: 100%; height: 100%; object-fit: cover;}
 
-.hero .btn {background: url(../images/hero-btn.png); display: block; background-repeat: no-repeat; width: 327px; height: 50px; text-align: center; line-height: 50px; color: #fff; position: absolute; top: 70%; left: 50%; transform: translateX(-50%); padding: 0 15px;}
+.hero .hero_content {width: 200%; display: flex; height: 100%; transition: 0.5s;}
+.hero .hero_content > li {width: 100%; height: 100%;}
+.hero .hero_content > li > img {width: 100%; height: 100%; object-fit: cover;}
+
+.hero .btn {background: url(../images/hero-btn.png); display: block; background-repeat: no-repeat; width: 327px; height: 50px; text-align: center; line-height: 50px; color: #fff; position: absolute; top: 75%; left: 50%; transform: translateX(-50%); padding: 0 15px; font-size: 18px; font-weight: 300;}
+.hero .btn:hover {}
+
 .sectionbox {}
-.sectionbox .section1 {max-width: 1195px; padding-top: 180px; position: relative; margin: 0 auto;}
+.sectionbox .section1 {max-width: 1195px; padding-top: 150px; position: relative; margin: 0 auto;}
+.section1 .centerbox {overflow: hidden;}
 .sectionbox .section1 .arrow {position: absolute; width: 100%; top: 50%;}
 .sectionbox .section1 .arrow div {position: absolute; width: 50px; height: 42px; transform: translate(0, 50%); cursor: pointer;}
 .sectionbox .section1 .arrow .btn_be {left: 0;}
 .sectionbox .section1 .arrow .btn_af {right: 0;}
 .sectionbox h3 {font-size: 30px; color: #fff; display: flex; justify-content: center; font-weight: normal; margin-bottom: 60px;}
-.sectionbox .section1 ul {display: flex; justify-content: center; gap: 30px;}
+.sectionbox .section1 ul {display: flex; gap: 30px; width: 1040px;}
 .sectionbox .section1 ul li {}
 .sectionbox .section1 ul li a {display: flex; flex-direction: column; gap: 15px;}
 .sectionbox .section1 ul li figure {}
@@ -94,8 +95,13 @@ header nav .gnb .lnb ul li:hover {background: #d35827;}
 .sectionbox .section2 ul li:hover {scale: 1.1;}
 
 .sectionbox .section3 {padding-bottom: 240px;}
-.sectionbox .section3 .centerbox {position: relative; width: 978px;}
-.sectionbox .section3 .cta {}
+.sectionbox .section3 .centerbox {position: relative; width: 978px; transition: 0.5s; animation: cta-btn 2s ease-in-out infinite; animation-play-state: paused;}
+@keyframes cta-btn {
+    0% {transform: scale(1) translateY(0);}
+    50% {transform: scale(1.05) translateY(-10px);}
+    100% {transform: scale(1) translateY(0);}
+}
+.section3 .centerbox:hover {animation-play-state: running;}
 .sectionbox .section3 .cta img {text-align: center; width: 100%; height: 100%;}
 .sectionbox .section3 .left {position: absolute; top: 50%; left: 6%; font-size: 14px; color: #ffce52;}
 .sectionbox .section3 .cta-text {position: absolute; top: 50%; left: 50%; display: flex; flex-direction: column; align-items: center; transform: translate(-50%, -50%); font-size: 35px; gap: 20px;}
@@ -103,20 +109,124 @@ header nav .gnb .lnb ul li:hover {background: #d35827;}
 .sectionbox .section3 .cta-text .maintext {color: #7d2724; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0 4px 4px rgba(0, 0, 0, 0.25);}
 .sectionbox .section3 .right {position: absolute; top: 45%; right: 7%; display: flex; align-items: center; gap: 15px;}
 
-.sectionbox .section4 {position: relative; }
-.sectionbox .section4 .bg {width: 1228px; height: 784px; margin: 0 auto; }
+.sectionbox .section4 {position: relative;}
+.sectionbox .section4 .bg {width: 1228px; margin: 0 auto; }
 .sectionbox .section4 .bg img {width: 100%; height: 100%;}
 .sectionbox .section4 .centerbox {}
 .sectionbox .section4 .centerbox .section4_content {position: absolute; top: 0; left: 50%; transform: translate(-50%, 0); padding: 50px 94px; box-sizing: border-box;}
 .sectionbox .section4 .grid {display: grid; grid-template-columns: repeat(4, 194px); grid-template-rows: repeat(2, 262px); gap: 30px;}
-.sectionbox .section4 .grid li {border: 1px solid #fff; position: relative;}
+.sectionbox .section4 .grid li {position: relative; overflow: hidden; transition: 0.5s;}
+
+
 .sectionbox .section4 .grid li a {color: #fff; display: flex; justify-content: center; align-items: center; height: 100%;}
 .sectionbox .section4 .grid li:nth-child(1) {grid-row: span 2;}
 .sectionbox .section4 .grid li:nth-child(3) {grid-column: span 2;}
 .sectionbox .section4 .grid li:nth-child(5) {grid-column: span 2;}
 .sectionbox .section4 .grid li a .nb {position: absolute; left: 0; top: 0;}
-.sectionbox .section4 .grid li a .ct {width: 160px; height: 160px; position: absolute; background: rgba(1, 1, 1, 0.7); top: 10%; display: flex; flex-direction: column; justify-content: space-between;}
-.sectionbox .section4 .grid li a .ct .en {text-align: right;}
+.sectionbox .section4 .grid li a .ct {width: 160px; height: 80px; position: absolute; background: rgba(1, 1, 1, 0.7); display: flex; flex-direction: column; justify-content: space-between; transition: 0.8s;}
+.sectionbox .section4 .grid li a .ct1 {top: 10%;}
+.sectionbox .section4 .grid li a .ct2 {top: 21%;}
+.sectionbox .section4 .grid li a .ct3 {left: 5%; top: 21%;}
+.sectionbox .section4 .grid li a .ko {font-size: 16px; font-weight: 300;}
+.sectionbox .section4 .grid li a .ct .en {text-align: right; font-size: 13px; font-weight: 100;}
+.sectionbox .section4 .grid li a .ct .en1 {color: #75A8A8;}
+.sectionbox .section4 .grid li a .ct .en2 {color: #D73B26;}
+.sectionbox .section4 .grid li a .ct .en5 {color: #F4BD8D;}
+.sectionbox .section4 .grid li a .ct .en3 {color: #F07A28;}
+.sectionbox .section4 .grid li a .ct .en4 {color: #5395CC;}
+
+.sectionbox .section4 .grid li:hover {scale: 1.1;}
+.sectionbox .section4 .grid li:hover .ct {height: 160px;}
 
 
-footer {height: 336px; background: rgba(25, 25, 21, 0.6)}
+footer {height: 336px; background: rgba(25, 25, 21, 0.6); margin-top: 150px; }
+footer .centerbox {display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: center; }
+footer .centerbox .footer_title {font-size: 30px; font-weight: 100; color: #fff; letter-spacing: 0.3em;}
+footer .centerbox .socialbox {display: flex; align-items: center; gap: 50px; padding: 32px 0 43px 0; box-sizing: border-box; width: 100%; justify-content: center; border-bottom: 1px solid #fff;}
+footer .centerbox .info {font-size: 20px;  display: flex; gap: 80px; margin-top: 29px;}
+footer .centerbox .info a {color: #dad8d4;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero_sub {height: 638px; position: relative;}
+.hero_sub figure {height: 100%;}
+.hero_sub figure img {width: 100%; object-fit: cover;}
+.hero_sub .gnb_title {font-size: 80px; position: absolute; color: #fff; top: 60%; left: 50%; transform: translate(-50%, 0); letter-spacing: 0.45em; font-family: "BBH Hegarty"; font-weight: 1000;}
+
+.gamemod_section {}
+.gamemod_section .centerbox {}
+.gamemod_section .centerbox h3 , .news_section .centerbox h3 {color: #fff; background-image: url(../images/sub_title.png); background-repeat: no-repeat; width: 588px; height: 75px; background-size: cover; text-align: center; line-height: 75px; margin: 300px auto 150px auto; font-size: 30px; font-weight: 300;}
+.gamemod_section .centerbox .modlist {display: grid; grid-template-columns: repeat(2,1fr); gap: 90px 30px;}
+.gamemod_section .centerbox .modlist li {display: flex; flex-direction: column; align-items: center;}
+.gamemod_section .centerbox .modlist li figure  {margin-bottom: 30px; width: 505px; height: 265px; }
+.gamemod_section .centerbox .modlist li figure img {width: 100%; object-fit: cover;}
+.gamemod_section .centerbox .modlist li .mod_title {display: flex; align-items: center; gap: 15px;}
+.gamemod_section .centerbox .modlist li .mod_title .kr {color: #fff; font-size: 25px;}
+.gamemod_section .centerbox .modlist li .mod_title .en {color: #fff; font-size: 18px;}
+.gamemod_section .centerbox .modlist li .mod_subtitle {font-size: 16px; color: #d35827; margin: 15px 0 25px 0;}
+.gamemod_section .centerbox .modlist li .gamemod_info {display: flex; align-items: center; gap: 20px; justify-content: center; width: 373px; line-height: 150%;}
+.gamemod_section .centerbox .modlist li .gamemod_info img {}
+.gamemod_section .centerbox .modlist li .gamemod_info p {font-size: 16px; color: #fff; font-family: 'Presentation'; font-weight: 200;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* sub2 */
+.news_section {}
+.news_section .centerbox {}
+.news_section .centerbox section {}
+.news_section .centerbox section .tabset {display: flex; justify-content: space-between;}
+.news_section .centerbox section .tabmenu {display: flex; gap: 30px; justify-content: center; align-items: center; margin-bottom: 60px;}
+.news_section .centerbox section .tabmenu li {border: 1px solid #fff; border-radius: 38px; color: #fff; padding: 10px 55px;}
+.news_section .centerbox section .card {display: flex; flex-direction: column; gap: 30px;}
+.news_section .centerbox section .card li {width: 100%; height: 300px; background: #fff;}
+.news_section .centerbox section .card li a {display: flex; align-items: center; gap: 30px;}
+.news_section .centerbox section .card li .search {}
+.news_section .centerbox section .card li .search a {width: 50px; height: 50px;}
+.news_section .centerbox section .card li .search a img {width: 100%;}
+.news_section .centerbox section .card li .contents {}
+.news_section .centerbox section .card li .contents .category {border: 1px solid #d35827; border-radius: 38px; padding: 7px 23px; font-size: 18px; color: #d35827; font-weight: 200;}
+.news_section .centerbox section .card li .contents h4 {font-size: 25px; font-weight: 500; margin: 30px 0 20px 0;}
+.news_section .centerbox section .card li .contents p {font-size: 18px; font-family: 'Presentation'; color: #696762;}
+.news_section .centerbox section .card li .contents .date {margin-top: 30px; display: block; font-family: 'Presentation'; color: #696762; font-size: 16px;}

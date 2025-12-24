@@ -150,3 +150,12 @@
     font-weight: 900;
     font-display: swap;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=BBH+Hegarty&display=swap');
+
+.bbh-hegarty-regular {
+  font-family: "BBH Hegarty", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
