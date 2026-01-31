@@ -1274,6 +1274,7 @@ body.sub1 {
 .hero_sub {
     height: 638px;
     position: relative;
+    overflow: hidden;
 }
 
 .hero_sub figure {
@@ -1297,7 +1298,9 @@ body.sub1 {
     font-weight: 1000;
 }
 
-.gamemod_section {}
+.gamemod_section {
+    margin-top: 150px;
+}
 
 .gamemod_section .centerbox {}
 
@@ -1311,7 +1314,7 @@ body.sub1 {
     background-size: cover;
     text-align: center;
     line-height: 75px;
-    margin: 150px auto;
+    margin: 0 auto 150px auto;
     font-size: 30px;
     font-weight: 300;
 }
@@ -1399,7 +1402,9 @@ body.sub2 {
     background: url(../images/sub1_bg.png);
 }
 
-.news_section {}
+.news_section {
+    margin-top: 150px;
+}
 
 .news_section .centerbox {}
 
